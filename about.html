@@ -11,27 +11,175 @@
 <body>
     <header class="cabecalho">
         <nav class="cabecalho__menu">
-            <a class="cabecalho__menu__link" href="index.html">Home</a>
-            <a class="cabecalho__menu__link" href="about.html">Sobre mim</a>
+            <ul>
+                <li style="--i:4;" data-icon="&#xf015">
+                    <a href="index.html">Home</a>
+                </li>
+                <li style="--i:3;" data-icon="&#xf2bb">
+                    <a href="about.html" style="color: azure;">Sobre Mim</a>
+                </li>
+                <li style="--i:2;" data-icon="&#xf07c">
+                    <a href="portifolio.html">Portfolio</a>
+                </li>
+                <li style="--i:1;" data-icon="&#x40">
+                    <a href="contato.html">Contato</a>
+                </li>
+                
+            </ul>
+            
+            <div class='clock' style="--color: #00f3ff">
+                <p id="date"></p>
+                <p id="time"></p>
+            </div>
         </nav>
     </header>
-    <main class="apresentacao">
-        <section class="apresentacao__conteudo">
-            <h1 class="apresentacao__conteudo__titulo">Sobre mim</h1>
-            <p class="apresentacao__conteudo__texto">Você já se perguntou o que é, de fato, um texto? Geralmente, entendemos o texto como um conjunto de
-                frases, ou seja, algo que foi feito para ser lido. Mas a definição de texto não é tão simples quanto
-                parece.</p>
-            <p class="apresentacao__conteudo__texto">Você já se perguntou o que é, de fato, um texto? Geralmente, entendemos o texto como um conjunto de
-                frases, ou seja, algo que foi feito para ser lido. Mas a definição de texto não é tão simples quanto
-                parece.</p>
-        </section>
-        <img class="apresentacao__imagem"  src="./assets/Imagem.png" alt="Foto da Joana Santos programando">
+    
+    <main>
+        <div class="row">
+            <label style="--color: #00f3ff">
+                <input type="checkbox" id="livrosCheckbox">
+                <div class="icon-wrapper">
+                    <div class="gosto">
+                        <i class="fa fa-book" aria-hidden="true">
+                            <h2 class="gostos" style="font-size: 1.2rem;">Livros</h2>
+                        </i>
+                    </div>
+                </div>
+            </label>
+            <label style="--color: #f00000">
+                <input type="checkbox" id="jogosCheckbox">
+                <div class="icon-wrapper">
+                    <div class="gosto">
+                        <i class="fa fa-gamepad" aria-hidden="true">
+                            <h2 class="gostos" style="font-size: 1.2rem;">Jogos</h2>
+                        </i>
+                    </div>
+                </div>
+            </label>
+            <label style="--color: #ff10f8">
+                <input type="checkbox" id="musicasCheckbox">
+                <div class="icon-wrapper">
+                    <div class="gosto">
+                        <i class="fa fa-music" aria-hidden="true">
+                            <h2 class="gostos" style="font-size: 1.2rem;">Musicas</h2>
+                        </i>
+                    </div>
+                </div>
+            </label>
+            <label style="--color: #fffec8">
+                <input type="checkbox" id="filmesCheckbox">
+                <div class="icon-wrapper">
+                    <div class="gosto">
+                        <i class="fa fa-film" aria-hidden="true">
+                            <h2 class="gostos" style="font-size: 1.2rem;">Filmes</h2>
+                        </i>
+                    </div>
+                </div>
+            </label>
+            <label style="--color: #0f0">
+                <input type="checkbox" id="seriesCheckbox">
+                <div class="icon-wrapper">
+                    <div class="gosto">
+                        <i class="fa fa-television" aria-hidden="true">
+                            <h2 class="gostos" style="font-size: 1.2rem; margin-left: -15%;">Series</h2>
+                        </i>
+                    </div>
+                </div>
+            </label>
+            <label style="--color: #0f00f0">
+                <input type="checkbox" id="estudosCheckbox">
+                <div class="icon-wrapper">
+                    <div class="gosto">
+                        <i class="fa fa-graduation-cap" aria-hidden="true">
+                            <h2 class="gostos" style="font-size: 1.2rem;">Estudos</h2>
+                        </i>
+                    </div>
+                </div>
+            </label>
+            <label style="--color: #CCCCCC">
+                <input type="checkbox" id="trabalhosCheckbox">
+                <div class="icon-wrapper">
+                    <div class="gosto">
+                        <i class="fa fa-suitcase" aria-hidden="true">
+                            <h2 class="gostos" style="font-size: 1.2rem; margin-left: -30%;">Trabalhos</h2>
+                        </i>
+                    </div>
+                </div>
+            </label>
+        </div>
+
+        <div class="info-div" style="display: none;">
+
+            <p> livros</p>
+        </div>
+        <div class="info-div" style="display: none;">
+            <div class="card">
+                <div class="inner" style="display: flex;">
+                    <img src="assets/jogoTLOU.jpg" style="width: 250px; height: 300px;">
+                </div>
+                <div class="title">
+                    <img src="assets/logoTLOU.png"  style="width: 180px; margin-top: -90px;" >
+                    <h2 >The Last Of Us</h2>
+                </div>
+            </div>
+        </div>
+
+        <div class="info-div" style="display: none;">
+            <div class="card">
+                <div class="inner" style="display: flex;">
+                    <img src="assets/pitty.jpg" style="width: 250px; height: 300px;">
+                </div>
+                <div class="title">
+                    <img src="assets/robo.png"  style="width: 250px;" >
+                </div>>
+            </div>
+            <div class="card">
+                <div class="inner">
+                    <img src="assets/dark.jpg" style="width: 250px; height: 300px;">
+                </div>
+                <div class="title">
+                    <img src="assets/logoDark.png"  style="width: 170px; margin-top: -50; margin-left: 50px;" >
+                </div>
+            </div>
+        </div>
+
+        <div class="info-div" style="display: none;">
+            <div class="card">
+                <div class="inner" style="display: flex;">
+                    <img src="assets/filmeFeli.jpg" style="width: 250px; height: 350px;">
+                </div>
+                <img src="assets/logoFeli.png" class="title" style="width: 900px; margin-top: -70px; margin-left: -10px;">
+            </div>
+            <div class="card">
+                <div class="inner" style="display: flex;">
+                    <img src="assets/filmeTudo.jpg" style="width: 250px; height: 350px;">
+                </div>
+                <img src="assets/logoTudo2.png" class="title" style="width: 920px; margin-top: -60px; margin-left: 00px;">
+            </div>
+            
+        </div>
+        
+        <div class="info-div" style="display: none;">
+
+            <p> dafc</p>
+        </div>
+        <div class="info-div" style="display: none;">
+
+            <p> dasjkdfiffc</p>
+        </div>
+        <div class="info-div" style="display: none;">
+
+            <p> trabalhos</p>
+        </div>
+
+
     </main>
     <footer class="rodape">
         <p>
-            &copy Desenvolvido por Gabriel Santana com parceria de Alura
+            &copy Desenvolvido por Gabriel Santana
         </p>
     </footer>
 </body>
 
 </html>
+<script src="script.js"></script>

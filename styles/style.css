@@ -1,4 +1,147 @@
 @import url('https://fonts.googleapis.com/css2?family=Krona+One&family=Montserrat:wght@400;600&display=swap');
+@import url("https://use.fontawesome.com/releases/v6.4.2/css/all.css");
+@import url('https://fonts.googleapis.com/css?family=Oswald:400,700');
+@import url('https://use.fontawesome.com/releases/v6.4.2/css/all.css');
+
+.container {
+    color: #FAFAFA;
+    font-size: 1.5rem;
+    display: flex;
+    flex-direction: column;
+}
+
+.right {
+    text-align: right;
+    width: 100% ;
+}
+
+.stack {
+    display: grid;
+    grid-template-columns: 1fr;
+}
+
+.stack span{
+    font-weight: bold;
+    grid-row-start: 1;
+    grid-column-start: 1;
+    font-size: 4rem;
+    --stack-height: calc(100% / var(--stacks) - 1px);
+    --inverse-index: calc(calc(var(--stacks)-1) - var(-index));
+    --clip-top: calc(var(--strack-height) * var(--index));
+    --clip-bottom: calc(var(--stack-height) * var(--inverse-index));
+    clip-path: inset(var(--clip-top) 0 var(--clip-bottom) 0);
+    animation: stack 340ms cubic-bezier(.46, .29, 0, 1.24) 1 backwards calc(var(--index) * 120ms), glitch 1s ease infinite 1s alternate-reverse;
+}
+
+.stack span:nth-child(odd) { --glitch-translate: 8px}
+.stack span:nth-child(even) {--glitch-translate:-8px}
+
+@keyframes stack {
+    0%{
+        opacity: 0;
+        transform: translateX(-50%);
+        text-shadow: -2px 3px 0 red, 2px -3px 0 blue;
+    };
+    60%{
+        opacity:0.5;
+        transform: translateX(50%);
+    }
+    80%{
+        transform: none;
+        opacity: 1;
+        text-shadow: 2px -3px 0 red, -2px 3px 0 blue;
+    }
+    100%{
+        text-shadow: none;
+    }
+}
+
+@keyframes glitch{
+    0%{
+        text-shadow: -2px 3px 0 red, 2px -3px 0 blue;
+        transform: translate(var(--glitch-translate));
+    }
+    2%{
+        text-shadow: 2px -3px 0 red, -2px 3px 0 blue;
+    }
+    5%, 100% { text-shadow: none; transform: none;}
+}
+
+
+ul{
+    position: relative;
+    transform: skewY(-15deg);
+    text-decoration: none;
+}
+
+li{
+    position: relative;
+    list-style: none;
+    width: 200px;
+    padding: 15px;
+    background: #3e3f36;
+    z-index: calc(1 * var(--i));
+    transition: 0.5s;
+    text-decoration: none;
+}
+
+li:hover{
+    background: #3a3b3b;
+    transform:translateX(-50px);
+}
+
+li::before{
+    font-family: "FontAwesome";
+    color: #999;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    content:attr(data-icon);
+    position: absolute;
+    top: 0;
+    left: -40px;
+    width: 40px;
+    height: 100%;
+    background: #375e85;
+    transform-origin: right;
+    transform: skewY(45deg);
+    transition: 0.5s;
+}
+
+li::after{
+    content: "";
+    position: absolute;
+    top:-40px;
+    left: 0px;
+    width: 100%;
+    height: 40px;
+    background: 35383e;
+    transform-origin: bottom;
+    transform: skewX(45deg);
+    transition: o.5s;
+}
+
+li:hover::after {
+    background: #22D4FD;
+}
+
+li a{
+    text-decoration: none;
+    color: #999;
+    display: block;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    transition: 0.5s;
+}
+
+li:hover a{
+    color: #fff
+}
+
+li:last-child::after{
+    box-shadow: -120px 120px 20px rgba(0, 0, 0, 0.4)
+}
+
 
 :root {
     --black: #000000;
@@ -18,11 +161,11 @@
 
 body{
     box-sizing: border-box;
-    background-color: var(--black);
+    background-color: #2e2c2c;
     color: var(--white);
 }
 .cabecalho{
-    padding: 2% 0% 0% 8%;
+    padding: 5% 0% 5% 8%;
 }
 
 .cabecalho__menu{
@@ -34,9 +177,18 @@ body{
     font-family: var(--fonte-secundari) ;
     font-size: 1.5rem;
     font-weight: 600;
-    color: var(--blue);
+    /*color: var(--blue); */
     text-decoration: none;
 }
+
+.clock{
+    padding: 0 0 10px 55%;
+    font-family: var(--fonte-secundari) ;
+    font-size: 1rem;
+    font-weight: 400;
+
+}
+
 
 .titulo-destaque{
     color: var(--blue);
@@ -66,12 +218,33 @@ body{
     font-family: var(--fonte-secundari);
 }
 
-.apresentacao__links{
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
+.link{
+    margin: 0 15px;
+    border-radius: 50%;
+    box-sizing: border-box;
+    background: #fff;
+    width: 110px;
+    height: 110px;
+    display: inline-flex;
+    justify-content: center ;
     align-items: center;
-    gap:32px;
+    text-decoration: none;
+    transition: 0.5s;
+    background: rgba(0, 0, 0, 0);
+    color: var(--color);
+    font-size: 5em;
+    -webkit-box-reflect: below 20px linear-gradient(to bottom, rgba(0, 0, 0, 0), rgba(37, 7, 7, 0.4));
+    
+}
+
+.link:hover{
+    background: var(--color);
+    color: #050801;
+    box-shadow: 0 0 5px var(--color),
+        0 0 25px var(--color),
+        0 0 50px var(--color),
+        0 0 200px var(--color);
+
 }
 
 .apresentacao__links__subtitulo {
@@ -108,6 +281,7 @@ body{
 }
 
 .rodape{
+    margin-top: 100px;
     padding: 24px;
     color: var(--black);
     background-color: var(--blue);
@@ -115,7 +289,114 @@ body{
     font-family: var(--fonte-secundari);
     font-size: 1.5rem;
     font-weight: 400;
+    
 }
+
+.row{
+    display:flex;
+    align-items: space-between;
+    gap: 10px;
+}
+
+label {
+    cursor:pointer;
+}
+
+input{
+    display:none;
+}
+
+.icon-wrapper{
+    margin: 50px -30px 100px 50px;
+    display: inline-flex;
+    width: 9.7rem;
+    height: 7.5rem;
+    display: grid;
+    place-items: center;
+    border-radius: 10px;
+    background: #0f0f0f;
+}
+
+.gostos{
+    font-size: 10px;
+    margin-left: -20%;
+    margin-top: 9px;
+}
+
+.gosto{
+
+    display: inline-flex;
+    width: 80px;
+    margin-left: 20%;
+    margin-top: -70px;
+    height: 0px;
+    color: #333;
+    font-size: 3rem;
+    transition: all 0.3s;
+    --shadow: 0 0 15px var(--color);
+}
+
+input:hover + .icon-wrapper .gosto {
+    color:var(--color);
+    text-shadow: var(--shadow);
+}
+
+input:checked + .icon-wrapper .gosto {
+    color: var(--color);
+    text-shadow: var(--shadow);
+}
+
+
+.card{
+    margin-left: 3%;
+    width: 30vw;
+    position: relative;
+}
+
+.title{
+    margin-top: -150px;
+    opacity: 0;
+    inset: 0;
+    position: absolute;
+}
+
+.info-div{
+    display: flex;
+}
+
+
+.inner img{
+    aspect-ratio: 9/16;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+.card:hover .inner{
+    opacity: 0.5;
+    transform: perspective(900px) translateY(-5%) rotateX(30deg)  translateZ(0);
+}
+
+.title{
+    transform: translate3d(10%, 70%, 0);
+}
+
+.card:hover .title{
+    opacity: 1;
+    transform: translate3d(0%, 30%, 0);
+}
+
+.inner, .title{
+    transition: all 0.5s;
+}
+
+
+
+
+
+
+
+
+
 
 @media (max-width: 1200px) {
     .apresentacao {

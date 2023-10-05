@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="metro4:init" content="true">
+
+    <!-- Metro 4 -->
+    <link href="../css/metro-all.min.css" rel="stylesheet">
+
+
+    <!-- Data Table -->
+    <link href="../css/select.dataTables.min.css" rel="stylesheet" />
+
+    <!--Import Google Icon Font-->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" sizes="32x32" href="../assets/img/favicon.png">
+
+    <!-- Jquery -->
+    <script src="../js/jquery.min.js"></script>
+    <script src="../js/jquery.dataTables.min.js" type="text/javascript"></script>
+
+    <!-- CDN pdf -->
+
+    <!-- SETTINGS -->
+    <script type="text/javascript"  src="../api/api.js"></script>
+
+    <script src="../js/pdf.min.js"></script>
+    <script src="../js/metro.min.js"></script>
+
+    <title>SPEC</title>
+</head>
+
+<body>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            font-family: sans-serif;
+        }
+
+        @media print {
+            table { 
+                page-break-inside:avoid; 
+            }
+        }
+        table {
+            width: 100%;
+            table-layout: auto;
+            border: 0.01px solid #000000; 
+            border-collapse: collapse;
+         
+        }
+
+        tr {
+            /* page-break-inside:avoid;
+            page-break-after:auto;
+            width: auto;
+            border: solid 0.01px; */
+        }
+
+        table td {
+            white-space: nowrap;
+            text-align: center;
+            border: solid 0.01px;
+            /* border: 1px solid #000000; */
+            /* width: auto; */
+        }
+
+   
+        #content {
+            width: 100%;
+            padding: 0 2px;
+            /* margin: 2px auto; */
+            /* border: solid 1px #000000; */
+        }
+
+        img {
+            max-width: 360px;
+            max-height: 360px;
+        }
+        
+
+        
+    </style>
+
+
+    <div id="container">
+        <div id="content">
+            <table class="principal-table" style="margin-top: 0;">
+                <table>
+                    <thead>
+                        <tr class="title">
+                            <th colspan="9" style="border-bottom: 1px solid; font-size: 14px;">ESPECIFICAÇÃO TÉCNICA PARA MANUTENÇÃO DE FERRAMENTAL</th>
+                        </tr>
+                    </thead>
+                        <tbody>
+                            <tr style="font-weight: bold;">
+                                <td colspan="6">PRESTAÇÃO DE SERVIÇO</td>
+                                <td style="width: 14%; vertical-align: top;">MN</td>
+                                <td style="width: 14%; vertical-align: top;">PARTE NUMBER / CLASSIFICAÇÃO</td>
+                                <td style="width: 14%; vertical-align: top;">NS</td>
+                                <td style="width: 14%; vertical-align: top;">CEMB</td>
+                                <td style="width: 14%; vertical-align: top;">ATIVO</td>
+                            </tr>
+                            <tr>
+                                <td colspan="6" class="dsc_forn"></td>
+                                <td class="num_ord_rep"></td>
+                                <td class="dsc_pn"></td>
+                                <td class="num_srie"></td>
+                                <td class="cod_cemb"></td>
+                                <td class="cod_imob"></td>
+                            </tr>
+                            <tr style="font-weight: bold; ">
+                                <td  colspan="5">PROCESSISTA EMBRAER</td>
+                                <td>SOLICITANTE</td>
+                                <td>PESO</td>
+                                <td>GRUPO</td>
+                                <td>DATA</td>
+                                <td>HORAS</td>
+                                <td>DIAS</td>
+                            </tr>
+                            <tr>
+                                <td colspan="5" class="especificador"></td>
+                                <td style="width: 14%; vertical-align: top;" class="solicitante"></td>
+                                <td style="width: 14%; vertical-align: top;" class="vlr_peso"></td>
+                                <td style="width: 14%; vertical-align: top;" class="dsc_grp"></td>
+                                <td style="width: 14%; vertical-align: top;" class="data_soli"></td>
+                                <td style="width: 14%; vertical-align: top;" class="total"></td>
+                                <td style="width: 14%; vertical-align: top;" class="dias"></td>
+                            </tr>
+                            <tr>
+                                <td colspan="5" class="dsc_tipo_rep"></td>
+                                <td style="width: 14%; vertical-align: top;" class="tipo"></td>
+                                <td style="width: 14%; vertical-align: top;" class="tryout"></td>
+                                <td style="width: 14%; vertical-align: top;">Exemplo 1234</td>
+                                <td style="width: 14%; vertical-align: top;">Exemplo 1234</td>
+                                <td style="width: 14%; vertical-align: top;">Exemplo 1234</td>
+                                <td style="width: 14%; vertical-align: top;">Exemplo 1234</td>
+                            </tr>
+                            <tr style="border-bottom: 1px solid;">
+                                <th style="font-size: 12px;">.</th>
+                            </tr>
+                            <tr style="border-bottom: 1px solid;" colspan="6">
+                                <th style="font-size: 16px;">ege554y54</th>
+                            </tr>
+                            <tr style="font-weight: bold;">
+                                <td style="width: 14%; vertical-align: top;">N°</td>
+                                <td style="width: 14%; vertical-align: top;">ITEM</td>
+                                <td style="width: 14%; vertical-align: top;">LINHA</td>
+                                <td style="width: 14%; vertical-align: top;">UM</td>
+                                <td style="width: 14%; vertical-align: top;">QT</td>
+                                <td style="width: 14%; vertical-align: top;">HR</td>
+                                <td style="width: 14%; vertical-align: top;">CONTRATO</td>
+                                <td conspan="6">DESCRIÇÃO DA LINHA DO CONTRATO</td>
+                            </tr>
+                            <tbody id="tableLineContracts">
+                            </tbody>
+
+                            <tbody class="table-spec-material" style="display: none">
+                                <tr>
+                                    <th colspan="10" class="title_esp_material"  style="font-size: 12px;"></th>
+                                </tr>
+                                <tr style="font-weight: bold;">
+                                    <td style="width: 14%; vertical-align: top;">Nº</td>
+                                    <td style="width: 14%; vertical-align: top;">ITEM</td>
+                                    <td>LINHA</td>
+                                    <td style="width: 14%; vertical-align: top;">UM</td>
+                                    <td style="width: 14%; vertical-align: top;">QT</td>
+                                    <td style="width: 14%; vertical-align: top;" >HR</td>
+                                    <td style="width: 14%; vertical-align: top;">CONTRATO</td>
+                                    <td conspan="9">DESCRIÇÃO DA LINHA DO CONTRATO</td>
+                                </tr>
+                                <tbody id="tableSpecMaterials">
+                                </tbody>
+                            </tbody>
+                            <tr style="border-bottom: 1px solid;">
+                                <th style="font-size: 12px;">COMPROVANTE DE SERVIÇO EXECUTADO</th>
+                            </tr>
+                            <tr>
+                                <td>RESPONSÁVEL EMBREAR</td>
+                                <td style="text-align: start; padding: 12px 4px">ASS:</td>
+                                <td style="text-align: start; padding: 0 4px">CHAPA:</td>
+                                <td style="text-align: start; padding: 0 4px">DATA:</td>
+                            </tr>
+                            <tr>
+                                <td>RESP. PRESTADOR DE SERVIÇO</td>
+                                <td style="text-align: start; padding: 12px 4px">ASS:</td>
+                                <td style="text-align: start; padding: 0 4px">CHAPA:</td>
+                                <td style="text-align: start; padding: 0 4px">DATA:</td>
+                            </tr>
+                            <tr class="imageTable" style="display: none">
+                                <th style="font-size: 12px;">DESENHO OU FOTO DO FERRAMENTAL</th>
+                            </tr>
+                            <tbody class="imageSpec">
+                            </tbody>
+                            <tr class="tableDescription" style="border-bottom: 1px solid; border-top: 1px solid;">
+                                <th style="font-size: 12px;">DESCRIÇÃO DA ATIVIDADE</th>
+                            </tr>
+                            <tr class="descricao-atividade">
+                                
+                            </tr>
+                        </tbody>
+                </table>
+
+        </div>
+    </div>
+
+    <div id="loadingSpinner" style="display: none;">
+        <div style="display: flex; flex-direction: column; align-items: center; justify-content: center; margin-top: 64px;">
+            <h2>Salvando Spec no SAP</h2>
+            <span class="mif-spinner4 mif-8x fg-darkCyan ani-spin"></span>
+        </div>
+    </div>
+</body>
+<script>
+    var toast = Metro.toast.create;
+    const urlParams = new URLSearchParams(window.location.search);
+
+    // id reparo
+    const id_rep = Number(urlParams.get('id_rep'));
+
+    // id fornecedor
+    const id_for = Number(urlParams.get('id_for'));
+
+
+    $.ajax({
+        url: `${baseUrlApi}/maintenance/tables/spec/${id_rep}`,
+        dataSrc: 'payload',
+        dataType: 'JSON',
+        success: function (data) {
+
+            if (data.payload <= 0) {
+                return redirectNotSpec()
+            }
+
+            var dsc_forn = data.payload[0].dsc_forn;
+            $('.dsc_forn').text(dsc_forn);
+
+            var num_ord_rep = data.payload[0].num_ord_rep;
+            $('.num_ord_rep').text(num_ord_rep);
+
+            var dsc_pn = data.payload[0].dsc_pn;
+            $('.dsc_pn').text(dsc_pn);
+
+            var num_srie = data.payload[0].num_srie;
+            $('.num_srie').text(num_srie);
+
+            var cod_cemb = data.payload[0].cod_cemb;
+            $('.cod_cemb').text(cod_cemb);
+
+            var cod_imob = data.payload[0].cod_imob;
+            $('.cod_imob').text(cod_imob);
+
+            var especificador = data.payload[0].especificador;
+            $('.especificador').text(especificador);
+
+            var solicitante = data.payload[0].solicitante;
+            $('.solicitante').text(solicitante);
+
+            var vlr_peso = data.payload[0].vlr_peso;
+            $('.vlr_peso').text(`${vlr_peso} KG`);
+
+            var dsc_grp = data.payload[0].dsc_grp;
+            $('.dsc_grp').text(dsc_grp);
+
+            var data_soli = data.payload[0].data_soli;
+            $('.data_soli').text(data_soli);
+
+            var total = data.payload[0].total;
+            $('.total').text(total);
+
+            var dias = data.payload[0].dias;
+            $('.dias').text(dias);
+
+            var dsc_tipo_rep = data.payload[0].dsc_tipo_rep;
+            $('.dsc_tipo_rep').text(dsc_tipo_rep);
+
+            var tipo = data.payload[0].tipo;
+            $('.tipo').text(tipo);
+
+            var tryout = data.payload[0].tryout;
+            $('.tryout').text(tryout);
+
+            redirectWithSpec();
+
+        }
+    });
+
+    function redirectNotSpec() {
+        toast("Especificação imcompleta! ", null, 1000, "bg-red fg-white");
+        setTimeout(() => {
+            window.history.back();
+        }, 3000)
+    }
+
+    function redirectWithSpec() {
+        $.ajax({
+            type: 'GET',
+            dataType: "JSON",
+            url: `${baseUrlApi}/maintenance/tables/spec-linha-contrato/${id_rep}`,
+            success: function (data) {
+
+                if (id_for == contratoSegueOperacao) {
+                    $.each(data.payload, function(i, item) {
+                        if (id_for == contratoSegueOperacao && item.num_linh == 620051140 || item.num_linh == 620051199) {
+                            $('#tableLineContracts').append('<tr>')
+                            $('#tableLineContracts').append(`<td>${item.n === null ? '' : item.n}</td>`)
+                            $('#tableLineContracts').append(`<td>${item.dsc_item === null ? '' : item.dsc_item}</td>`)
+                            $('#tableLineContracts').append(`<td>${item.num_linh === null ? '' : item.num_linh}</td>`)
+                            $('#tableLineContracts').append(`<td>${item.dsc_und_mdd === null ? '' : item.dsc_und_mdd}</td>`)
+                            $('#tableLineContracts').append(`<td>${item.vlr_area === null ? '' : item.vlr_area}</td>`)
+                            $('#tableLineContracts').append(`<td>${item.tpo_exec_linha === null ? '' : item.tpo_exec_linha}</td>`)
+                            $('#tableLineContracts').append(`<td>${item.dsc_forn === null ? '' : item.dsc_forn}</td>`)
+                            $('#tableLineContracts').append(`<td>${item.dsc_atvd === null ? '' : item.dsc_atvd}</td>`)
+                            $('#tableLineContracts').append(`<td>${item.cemb === null ? '' : item.cemb}</td>`)
+                            $('#tableLineContracts').append('</tr>')
+                        }  
+                    })
+                } else {
+                    $.each(data.payload, function(i, item) {
+                        $('#tableLineContracts').append('<tr>')
+                        $('#tableLineContracts').append(`<td>${item.n === null ? '' : item.n}</td>`)
+                        $('#tableLineContracts').append(`<td>${item.dsc_item === null ? '' : item.dsc_item}</td>`)
+                        $('#tableLineContracts').append(`<td>${item.num_linh === null ? '' : item.num_linh}</td>`)
+                        $('#tableLineContracts').append(`<td>${item.dsc_und_mdd === null ? '' : item.dsc_und_mdd}</td>`)
+                        $('#tableLineContracts').append(`<td>${item.vlr_area === null ? '' : item.vlr_area}</td>`)
+                        $('#tableLineContracts').append(`<td>${item.tpo_exec_linha === null ? '' : item.tpo_exec_linha}</td>`)
+                        $('#tableLineContracts').append(`<td>${item.dsc_forn === null ? '' : item.dsc_forn}</td>`)
+                        $('#tableLineContracts').append(`<td>${item.dsc_atvd === null ? '' : item.dsc_atvd}</td>`)
+                        $('#tableLineContracts').append(`<td>${item.cemb === null ? '' : item.cemb}</td>`)
+                        $('#tableLineContracts').append('</tr>')
+                        
+                    })
+                }
+                
+            }
+        });
+
+        $.ajax({
+            url: `${baseUrlApi}/maintenance/tables/spec-materiais/${id_rep}`,
+            dataSrc: 'payload',
+            dataType: 'JSON',
+            success: function (data) {
+                if (data.payload.length > 0) {
+                    $('.table-spec-material').show();
+
+                    $('.title_esp_material').text('RESERVA DE COMPONENTES');
+
+                    $.each(data.payload, function(i, item) {
+                        $('#tableSpecMaterials').append('<tr>')
+                        $('#tableSpecMaterials').append(`<td>${item.n === null ? '' : item.n}</td>`)
+                        $('#tableSpecMaterials').append(`<td>${item.codigo === null ? '' : item.codigo}</td>`)
+                        $('#tableSpecMaterials').append(`<td>${item.descricao === null ? '' : item.descricao}</td>`)
+                        $('#tableSpecMaterials').append(`<td>${item.qtde === null ? '' : item.qtde}</td>`)
+                        $('#tableSpecMaterials').append(`<td>${item.unid === null ? '' : item.unid}</td>`)
+                        $('#tableSpecMaterials').append('</tr>')
+                    })
+                }
+            }
+        })
+
+        $.ajax({
+            url: `${baseUrlApi}/inspection/images/list/${id_rep}`,
+            dataSrc: 'payload',
+            dataType: 'JSON',
+            success: function (data) {
+                if (data.payload.length > 0) {
+                    $.each(data.payload, function(i, item) {
+                        if (id_for == contratoSegueOperacao) {
+                            if (item.nome_arq.toLowerCase().includes("piramide")) {
+                                $('.imageTable').show()     
+                                $('.imageSpec').append(`<tr><td colspan="11" style="padding: 8px; border: 0px;"><img src="data:image/png;base64,${item.img}" /></td></tr>`)
+                            }
+                        } else {
+                            $('.imageTable').show()
+                            $('.imageSpec').append(`<tr><td colspan="11" style="padding: 8px 0;"><img src="data:image/png;base64,${item.img}" /></td></tr>`)
+                        } 
+                    
+                    })
+                }
+            }
+        });
+
+        $.ajax({
+            url: `${baseUrlApi}/maintenance/tables/spec-atividades/${id_rep}`,
+            dataSrc: 'payload',
+            dataType: 'JSON',
+            success: function (data) {
+                if (data.payload.length > 0) {
+                    $('.tableDescription').show()
+                    $.each(data.payload, function(i, item) {
+                        $('.descricao-atividade').append(`<td colspan="10" style="text-align: left; padding: 12px; border: none">${item.obs}</td>`)
+                    })
+                }           
+                
+            }
+        });
+
+        // setTimeout(() => {
+
+        //     var element = $('#container').html();
+
+        //     var opt = {
+
+        //         filename: `Especificacao_${id_rep}.pdf`,
+        //         html2canvas: {
+        //             dpi: 100,
+        //             scale: 5,
+        //             letterRendering: true,
+        //             useCORS: true
+        //         },
+        //         jsPDF: { unit: 'em', format: 'a4', orientation: 'portrait' }
+        //     };
+        //     html2pdf(element, opt)
+
+        // }, 3000);
+
+        // setTimeout(() => {
+        //     if (id_for == contratoSegueOperacao) {
+        //         window.location.href = `${baseUrlFront}/sjk/spec_segue_operacao.html?id_rep=${id_rep}&id_for=${id_for}`;
+        //     } else {
+        //         window.history.back();
+        //     }
+        // }, 4000);
+
+    }
+
+
+
+</script>
+
+</html>
