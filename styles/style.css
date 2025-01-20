@@ -2,6 +2,8 @@
 @import url("https://use.fontawesome.com/releases/v6.4.2/css/all.css");
 @import url('https://fonts.googleapis.com/css?family=Oswald:400,700');
 @import url('https://use.fontawesome.com/releases/v6.4.2/css/all.css');
+@import url('https://use.fontawesome.com/releases/v6.4.2/css/all.css');
+@import url('https://fonts.googleapis.com/css2?family=Righteous&display=swap');
 
 .container {
     color: #FAFAFA;
@@ -182,7 +184,7 @@ body{
 }
 
 .clock{
-    padding: 0 0 10px 55%;
+    padding: 0 0 10px -10px;
     font-family: var(--fonte-secundari) ;
     font-size: 1rem;
     font-weight: 400;
@@ -295,7 +297,7 @@ body{
 .row{
     display:flex;
     align-items: space-between;
-    gap: 10px;
+    gap: 100px;
 }
 
 label {
@@ -309,7 +311,7 @@ input{
 .icon-wrapper{
     margin: 50px -30px 100px 50px;
     display: inline-flex;
-    width: 9.7rem;
+    width: 10.2rem;
     height: 7.5rem;
     display: grid;
     place-items: center;
@@ -428,6 +430,143 @@ input:checked + .icon-wrapper .gosto {
 
 
 
+.linguagens{
+    margin-left: 8%;
+    margin-right: 400px;
+    margin-top: 150px;
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    transition: 0.5s;
+    transform: skewY(-1deg);
+}
+
+.cardL{
+    position: relative;
+    width: 190px;
+    height: 300px;
+    transition: 0.5s;
+}
+
+.cardL::before{
+    content: "";
+    position: absolute;
+    top: -15px;
+    left: 0;
+    width: 100%;
+    height: 15px;
+    background: #21ccc0;
+    transform-origin: bottom;
+    transform: skewX(45deg);
+    transition: 0.5;
+}
+
+.cardL::after{
+    content: "";
+    position: absolute;
+    top: -15px;
+    left: -15px;
+    width: 15px;
+    height: 50%;
+    background: #21ccc0;
+    transform-origin: left;
+    transform: skewY(45deg);
+    transition: 0.5s;
+    border-bottom: 200px solid #21ccc0;
+}
+
+.cardL:hover{
+    transform: translateY(-40px);
+   
+}
+
+.imgBx{
+    width: 190px;
+    height: 100px;
+    background-color: #FFDEE9;
+    background-image: linear-gradient(0deg, #FFDEE9 0%, #21ccc0 100%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.imgBx .fab{
+    font-size: 3em;
+}
+
+.imgBx .fa-html5 {
+    background-color: #FBDA61;
+    background-image: linear-gradient(45deg, #FBDA61 0%, #FF5ACD 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.imgBx .fa-css3-alt{
+    background-color: #409eff;
+    background-image: linear-gradient(45deg, #4f29CD 0%, #409eff 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.imgBx .fa-js-square{
+    background-color: #F7ff00;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.imgBx h3{
+    color: #000;
+    position: relative;
+    margin-top: 10px;
+}
+
+.contentL{
+    position: relative;
+    background: #FFDEE9;
+    width: 100%;
+    height: 250px;
+    text-align: center;
+}
+
+.contentL:before{
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 30px;
+    background: linear-gradient(transparent, transparent, rgba(0,0,0,0.2));
+    transform-origin: bottom;
+    transform: skewX(45deg);
+    transition: 0.5s;
+    z-index: -1;
+}
+
+.contentL p{
+    padding: 10px;
+    color: #000000;
+    font-size: 14px;
+}
+
+.cardL:hover .contentL:before{
+    transform: translateY(40px) skewX(45deg);
+    filter: blur(5px);
+    opacity: ;
+}
+
+.cardL:nth-child(1){
+    z-index: 3;
+}
+
+.cardL:nth-child(2){
+    z-index: 2;
+}
+
+.cardL:nth-child(3){
+    z-index: 1;
+}
 
 
 

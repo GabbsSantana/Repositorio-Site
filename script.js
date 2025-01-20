@@ -88,3 +88,12 @@ checkboxes.forEach((checkbox, index) => {
         }
     });
 });
+
+
+
+
+
+
+
+
+
